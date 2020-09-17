@@ -63,9 +63,30 @@ const library = {
     }
     //console.log(this.playlists[playlistId].tracks, "after");
   },
-  generateUid = function () {
+  generateUid: function () {
     return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
   },
+  addTrack: function (name, artist, album) {
+    const id = this.generateUid();
+    //console.log(this.tracks, "before")
+    this.tracks[id] = {
+      id: id,
+      name: [name],
+      artist: [artist],
+      album: [album]
+    };
+    //console.log(library.tracks, "after")
+  }, 
+  addPlaylist: function (name) {
+    const id = generateUid();
+    //console.log(this.playlists, "before");
+    this.playlists[id] = {
+      id: id,
+      name: name
+    };
+    //console.log(this.playlists, "after");
+  },
+
 
 
 };
@@ -139,7 +160,7 @@ const generateUid = function () {
 
 // adds a track to the library
 const addTrack = function (name, artist, album) {
-  const id = generateUid();
+  const id = this.generateUid();
   //console.log(library.tracks, "before")
   library.tracks[id] = {
     id: id,
