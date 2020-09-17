@@ -103,17 +103,18 @@ const generateUid = function () {
 // adds a track to the library
 const addTrack = function (name, artist, album) {
   const id = generateUid();
-  console.log(library.tracks, "before")
+  //console.log(library.tracks, "before")
   library.tracks[id] = {
-  id:id,
-  name:[name],
-  artist: [artist],
-  album: [album] 
+    id: id,
+    name: [name],
+    artist: [artist],
+    album: [album]
   }
-  console.log(library.tracks, "after")
+  //console.log(library.tracks, "after")
 }
 
-addTrack("King Kunta", "Kendrick Lamar", "To Pimp A Butterfly")
+//addTrack("King Kunta", "Kendrick Lamar", "To Pimp A Butterfly")
+
 // adds a playlist to the library
 const addPlaylist = function (name) {
 
