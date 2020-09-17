@@ -75,13 +75,10 @@ const printPlaylist = function (playlistId) {
     for (let song of library.playlists[playlistId].tracks) {
       //console.log(song);
       if (song === library.tracks[item].id) {
-        
         console.log(`${track.id}: ${track.name} by ${track.artist} (${track.album})`)
       }
     }
   }
-
-
 }
 
 printPlaylist("p01");
