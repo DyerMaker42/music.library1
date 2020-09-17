@@ -63,7 +63,9 @@ const library = {
     }
     //console.log(this.playlists[playlistId].tracks, "after");
   },
-
+  generateUid = function () {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  },
 
 
 };
@@ -126,7 +128,7 @@ const addTrackToPlaylist = function (trackId, playlistId) {
   //console.log(this.playlists[playlistId].tracks, "after");
 };
 
-library.addTrackToPlaylist("t03", "p01");
+//library.addTrackToPlaylist("t03", "p01");
 
 // generates a unique id
 // (already implemented: use this for addTrack and addPlaylist)
