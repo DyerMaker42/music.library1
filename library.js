@@ -40,12 +40,12 @@ const library = {
 // prints a list of all playlists, in the form:
 // p01: Coding Music - 2 tracks
 // p02: Other Playlist - 1 tracks
-const printPlaylists = function () {
+const printPlaylists = function() {
   for (let item in library.playlists) {
     //console.log(library.playlists[item].id);
-    console.log(`${library.playlists[item].id}: ${library.playlists[item].name} - ${library.playlists[item].tracks.length} tracks `)
+    console.log(`${library.playlists[item].id}: ${library.playlists[item].name} - ${library.playlists[item].tracks.length} tracks `);
   }
-}
+};
 
 //printPlaylists()
 
@@ -54,12 +54,12 @@ const printPlaylists = function () {
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
 // t03: Four Thirty-Three by John Cage (Woodstock 1952)
-const printTracks = function () {
+const printTracks = function() {
   for (let item in library.tracks) {
     const track = library.tracks[item];
     console.log(`${track.id}: ${track.name} by ${track.artist} (${track.album})`);
   }
-}
+};
 
 //printTracks();
 
@@ -67,41 +67,41 @@ const printTracks = function () {
 // p01: Coding Music - 2 tracks
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
-const printPlaylist = function (playlistId) {
-  console.log(`${library.playlists[playlistId].id}: ${library.playlists[playlistId].name} - ${library.playlists[playlistId].tracks.length} tracks `)
+const printPlaylist = function(playlistId) {
+  console.log(`${library.playlists[playlistId].id}: ${library.playlists[playlistId].name} - ${library.playlists[playlistId].tracks.length} tracks `);
   for (let item in library.tracks) {
     const track = library.tracks[item];
     //console.log(library.tracks[item].id)
     for (let song of library.playlists[playlistId].tracks) {
       //console.log(song);
       if (song === library.tracks[item].id) {
-        console.log(`${track.id}: ${track.name} by ${track.artist} (${track.album})`)
+        console.log(`${track.id}: ${track.name} by ${track.artist} (${track.album})`);
       }
     }
   }
-}
+};
 
 //printPlaylist("p01");
 // adds an existing track to an existing playlist
-const addTrackToPlaylist = function (trackId, playlistId) {
-  console.log(library.playlists[playlistId].tracks, "before")
+const addTrackToPlaylist = function(trackId, playlistId) {
+  console.log(library.playlists[playlistId].tracks, "before");
   if (library.tracks[trackId]) {
-    library.playlists[playlistId].tracks.push(trackId)
+    library.playlists[playlistId].tracks.push(trackId);
   }
-  console.log(library.playlists[playlistId].tracks, "after")
-}
+  console.log(library.playlists[playlistId].tracks, "after");
+};
 
 //addTrackToPlaylist("t03", "p01");
 
 // generates a unique id
 // (already implemented: use this for addTrack and addPlaylist)
-const generateUid = function () {
+const generateUid = function() {
   return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-}
+};
 
 
 // adds a track to the library
-const addTrack = function (name, artist, album) {
+const addTrack = function(name, artist, album) {
   const id = generateUid();
   //console.log(library.tracks, "before")
   library.tracks[id] = {
@@ -109,30 +109,30 @@ const addTrack = function (name, artist, album) {
     name: [name],
     artist: [artist],
     album: [album]
-  }
+  };
   //console.log(library.tracks, "after")
-}
+};
 
 //addTrack("King Kunta", "Kendrick Lamar", "To Pimp A Butterfly")
 
 // adds a playlist to the library
-const addPlaylist = function (name) {
+const addPlaylist = function(name) {
   const id = generateUid();
-  console.log(library.playlists, "before" );
+  console.log(library.playlists, "before");
   library.playlists[id] = {
     id: id,
     name: name
-  }
-  console.log(library.playlists, "after" );
-}
+  };
+  console.log(library.playlists, "after");
+};
 
 //addPlaylist("Route 66")
 
 // STRETCH:
 // given a query string string, prints a list of tracks
 // where the name, artist or album contains the query string (case insensitive)
-// tip: use "string".search("tri") 
+// tip: use "string".search("tri")
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
-const printSearchResults = function (query) {
+const printSearchResults = function(query) {
 
-}
+};
