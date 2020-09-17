@@ -56,6 +56,13 @@ const library = {
       }
     }
   },
+  addTrackToPlaylist: function (trackId, playlistId) {
+    //console.log(this.playlists[playlistId].tracks, "before");
+    if (this.tracks[trackId]) {
+      this.playlists[playlistId].tracks.push(trackId);
+    }
+    //console.log(this.playlists[playlistId].tracks, "after");
+  },
 
 
 
@@ -109,17 +116,17 @@ const printPlaylist = function (playlistId) {
   }
 };
 
-library.printPlaylist("p01");
+//library.printPlaylist("p01");
 // adds an existing track to an existing playlist
 const addTrackToPlaylist = function (trackId, playlistId) {
-  console.log(library.playlists[playlistId].tracks, "before");
-  if (library.tracks[trackId]) {
-    library.playlists[playlistId].tracks.push(trackId);
+  //console.log(this.playlists[playlistId].tracks, "before");
+  if (this.tracks[trackId]) {
+    this.playlists[playlistId].tracks.push(trackId);
   }
-  console.log(library.playlists[playlistId].tracks, "after");
+  //console.log(this.playlists[playlistId].tracks, "after");
 };
 
-//addTrackToPlaylist("t03", "p01");
+library.addTrackToPlaylist("t03", "p01");
 
 // generates a unique id
 // (already implemented: use this for addTrack and addPlaylist)
