@@ -30,7 +30,13 @@ const library = {
       name: "Other Playlist",
       tracks: ["t03"]
     }
-  }
+  },
+  printPlaylists: function() {
+    for (let item in this.playlists) {
+      //console.log(library.playlists[item].id);
+      console.log(`${this.playlists[item].id}: ${this.playlists[item].name} - ${this.playlists[item].tracks.length} tracks `);
+    }
+  },
 };
 
 /////////////////////////////
@@ -47,7 +53,7 @@ const printPlaylists = function() {
   }
 };
 
-//printPlaylists()
+//library.printPlaylists();
 
 
 // prints a list of all tracks, using the following format:
